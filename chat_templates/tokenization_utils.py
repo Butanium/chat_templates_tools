@@ -48,7 +48,6 @@ with open(template_path / "llama3.1_chat_template_ctrl_tokens.jinja", "r") as f:
     LLAMA3_1_CTRL_TEMPLATE = f.read()
 
 
-
 def patch_tokenizer(
     tokenizer,
     model_name: str,
@@ -221,4 +220,3 @@ def tokenize_with_ctrl_ids(
     ids[mask] = rep_1_10
     tok_dict["ctrl_ids"] = ids
     return tok_dict
-
